@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 
 def main(dataset_path):
-    df = pd.read_csv("heart_preprocessing/heart_clean.csv")
+    df = pd.read_csv(args.data_path)
 
     X = df.drop(columns=["num"])
     y = df["num"]
@@ -34,7 +34,7 @@ def main(dataset_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset_path", type=str)
+    parser.add_argument("--data_path", type=str, required=True)
     args = parser.parse_args()
 
     main(args.dataset_path)
