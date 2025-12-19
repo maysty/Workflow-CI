@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 
 def main(dataset_path):
-    df = pd.read_csv(dataset_path)
+    df = pd.read_csv("heart_preprocessing/heart_clean.csv")
 
     X = df.drop(columns=["num"])
     y = df["num"]
