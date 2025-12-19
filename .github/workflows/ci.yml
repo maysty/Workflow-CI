@@ -2,33 +2,39 @@ name: MLflow CI Pipeline
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  train-model:
+  train:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: 3.11
+          auto-update-conda: true
+          python-version: 3.10
+          activate-environment: mlflow-env
+          environment-file: MLProject/conda.yaml
 
-      - name: Install MLflow
+      - name: Verify conda
+        shell: bash -l {0}
         run: |
-          pip install --upgrade pip
-          pip install mlflow pandas scikit-learn
+          conda info
+          conda list
 
       - name: Run MLflow Project
+        shell: bash -l {0}
         run: |
-          mlflow run MLProject/
+          mlflow run MLProject
 
-      - name: Upload MLflow Artifacts
+      - name: Upload MLflow artifacts
         uses: actions/upload-artifact@v4
         with:
           name: mlflow-artifacts
-          path: mlruns/
+          path: mlruns
