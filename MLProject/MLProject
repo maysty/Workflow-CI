@@ -2,5 +2,6 @@ name: heart-ml-project
 
 conda_env: conda.yaml
 
-consideration:
-  description: Heart Disease Classification using MLflow
+entry_points:
+  main:
+    command: "python modelling.py"
