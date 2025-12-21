@@ -1,4 +1,4 @@
-name: CI Workflow
+name: MLflow CI Retraining
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  train-model:
+  retrain:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,11 +19,10 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Install MLflow
+        run: pip install mlflow
 
-      - name: Run modelling
+      - name: Run MLflow Project
         run: |
-          python MLProject/modelling.py
+          cd MLProject
+          mlflow run . --env-manager=local
