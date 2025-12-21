@@ -1,0 +1,16 @@
+digest: '29120789'
+name: dataset
+profile: '{"num_rows": 184, "num_elements": 2760}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "id", "required": true}, {"type":
+  "double", "name": "age", "required": true}, {"type": "long", "name": "sex", "required":
+  true}, {"type": "long", "name": "dataset", "required": true}, {"type": "double",
+  "name": "cp", "required": true}, {"type": "double", "name": "trestbps", "required":
+  true}, {"type": "double", "name": "chol", "required": true}, {"type": "long", "name":
+  "fbs", "required": true}, {"type": "double", "name": "restecg", "required": true},
+  {"type": "double", "name": "thalch", "required": true}, {"type": "long", "name":
+  "exang", "required": true}, {"type": "double", "name": "oldpeak", "required": true},
+  {"type": "double", "name": "slope", "required": true}, {"type": "double", "name":
+  "ca", "required": true}, {"type": "double", "name": "thal", "required": true}]}'
+source: '{"tags": {"mlflow.user": "maysty", "mlflow.source.name": "modelling.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

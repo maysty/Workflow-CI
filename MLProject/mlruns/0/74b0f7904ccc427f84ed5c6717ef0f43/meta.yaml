@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ikemaya/Downloads/Workflow-CI/MLProject/mlruns/0/74b0f7904ccc427f84ed5c6717ef0f43/artifacts
+end_time: 1766126347371
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 74b0f7904ccc427f84ed5c6717ef0f43
+run_name: skillful-hog-360
+run_uuid: 74b0f7904ccc427f84ed5c6717ef0f43
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766126332858
+status: 3
+tags: []
+user_id: maysty
