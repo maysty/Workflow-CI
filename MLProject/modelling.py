@@ -1,11 +1,21 @@
+import argparse
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
-DATA_PATH = "MLProject/heart_preprocessing/heart_clean.csv"
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--data_path",
+    type=str,
+    required=True,
+    help="Path to cleaned heart dataset"
+)
+args = parser.parse_args()
 
-df = pd.read_csv(DATA_PATH)
+data_path = args.data_path
+
+df = pd.read_csv(data_path)
 
 X = df.drop(columns=["num"])
 y = df["num"]
